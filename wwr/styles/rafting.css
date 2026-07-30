@@ -27,14 +27,23 @@ header, main, footer {
 /* Header Styling */
 header {
   background-color: var(--primary-color);
-  display: flex;
+  display: grid;
+  grid-template-columns: 150px 1fr;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 20px 20px;
 }
+header nav{
+  width: 100%;
+}
+nav ul{
+list-style-type: none;
+display: flex;
+justify-content: space-around;
 
+}
 header img {
-  width: 80px;
+  width: 100px;
   height: auto;
 }
 
@@ -133,6 +142,10 @@ footer {
 footer p {
   font-size: 0.9rem;
 }
+footer p{
+  flex: 1;
+  text-align: center;
+}
 
 .socialmedia {
   display: flex;
@@ -146,4 +159,44 @@ footer p {
 .socialmedia img {
   width: 28px;
   height: 28px;
+}
+
+.history{
+  display: grid;
+  grid-template-columns: 1fr 200px 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
+.history h2 {
+    grid-column: 1 / 4;
+    text-align: center;
+}
+
+.history img {
+    width: 100%;
+}
+.adventure {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.adventure h2 {
+    grid-column: 1 / 6;
+    text-align: center;
+}
+
+.adventure figure {
+    margin: 0;
+}
+
+.adventure img {
+    width: 100%;
+    height: auto;
+}
+
+.adventure figcaption {
+    text-align: center;
+    font-size: 0.9rem;
 }
