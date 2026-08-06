@@ -1,8 +1,8 @@
 :root {
-  --primary-color: #088ada;  /* water blue */
-  --secondary-color: hsl(242, 56%, 21%); /* warm sand */
-  --accent1-color: #264653;  /* dark slate blue */
-  --accent2-color: #e9c46a;  /* light golden yellow */
+  --primary-color: #088ada;
+  --secondary-color: hsl(242, 56%, 21%);
+  --accent1-color: #264653;
+  --accent2-color: #e9c46a;
   --heading-font: "Times New Roman", "Georgia", serif;
   --body-font: Arial, Helvetica, sans-serif;
 }
@@ -19,43 +19,34 @@ body {
   background-color: #ffffff;
 }
 
-header, main, footer {
+header,
+main,
+footer {
   width: 840px;
   margin: 0 auto;
 }
 
-/* Header Styling */
+/* Header */
 header {
   background-color: var(--primary-color);
   display: grid;
   grid-template-columns: 150px 1fr;
   align-items: center;
-  justify-content: space-between;
-  padding: 20px 20px;
+  padding: 20px;
 }
-header nav{
-  width: 100%;
-}
-nav ul{
-list-style-type: none;
-display: flex;
-justify-content: space-around;
 
-}
 header img {
   width: 100px;
-  height: auto;
 }
 
-/* Header Navigation */
-header nav {
+nav ul {
+  list-style-type: none;
   display: flex;
-  gap: 20px;
+  justify-content: space-around;
 }
 
-/* FIX: Using --secondary-color on links fixes the unused variable audit error */
 header nav a {
-  color: var(--accent2-color);
+  color: white;
   text-decoration: none;
   font-weight: bold;
   padding: 5px 10px;
@@ -68,81 +59,40 @@ header nav a:hover {
 }
 
 /* Headings */
-h1, h2 {
+h1,
+h2 {
   font-family: var(--heading-font);
+}
+
+h1 {
   color: var(--primary-color);
+  text-align: center;
+  margin: 20px 0;
 }
 
 h2 {
-  font-family: var(--heading-font);
-  color: var(--secondary-color); /* ✅ Using --secondary-color fixes the error! */
+  color: var(--secondary-color);
   margin-bottom: 10px;
 }
 
-
-/* Main Content Sections */
+/* Sections */
 section {
   margin: 20px 0;
   padding: 10px;
 }
 
-/* Hero Section Requirements */
-.hero {
-  position: relative;
-  margin-bottom: 20px;
-}
 
-.hero img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.hero h1 {
-  position: absolute;
-  top: 20px;
-  width: 100%;
-  padding: 12px;
-  text-align: center;
-  background-color: rgba(38, 70, 83, 0.75); /* var(--accent1-color) opacity */
-  color: #ffffff;
-}
-
-.hero article {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 15px;
-  border-radius: 5px;
-}
-
-.hero article img {
-  float: right;
-  width: 120px;
-  margin-left: 15px;
-}
-
-.hero article p {
-  line-height: 1.5;
-}
-
-/* Footer & Social Links */
+/* Footer */
 footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: var(--primary-color);
-  color: #ffffff;
+  color: white;
   padding: 15px 20px;
-  margin-top: 20px;
 }
 
 footer p {
-  font-size: 0.9rem;
-}
-footer p{
   flex: 1;
   text-align: center;
 }
@@ -152,16 +102,123 @@ footer p{
   gap: 15px;
 }
 
-.socialmedia a {
-  text-decoration: none;
-}
-
 .socialmedia img {
   width: 28px;
   height: 28px;
 }
 
-.history{
+
+/* Contact Page */
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.company-info {
+  text-align: center;
+}
+
+.map iframe {
+  width: 100%;
+  height: 400px;
+}
+
+
+.contact-form {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+
+.contact-form textarea {
+  min-height: 120px;
+}
+
+
+/* Radio buttons */
+
+.radio-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+.radio-group input {
+  margin: 0;
+}
+
+
+/* Newsletter */
+
+.newsletter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+
+/* Button */
+
+.contact-form button {
+  background-color: #005a9c;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+  font-size: 1rem;
+}
+
+
+/* Employees */
+
+.employees {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.employees h2 {
+  width: 100%;
+  text-align: center;
+}
+
+.employees figure {
+  width: 200px;
+  text-align: center;
+}
+
+.employees img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+
+/* History page */
+
+.history {
   display: grid;
   grid-template-columns: 1fr 200px 1fr;
   gap: 20px;
@@ -169,99 +226,45 @@ footer p{
 }
 
 .history h2 {
-    grid-column: 1 / 4;
-    text-align: center;
+  grid-column: 1 / 4;
+  text-align: center;
 }
 
 .history img {
-    width: 100%;
+  width: 100%;
 }
+
+
+/* Adventure section */
+
 .adventure {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 15px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
 }
 
 .adventure h2 {
-    grid-column: 1 / 6;
-    text-align: center;
-}
-
-.adventure figure {
-    margin: 0;
+  grid-column: 1 / 6;
+  text-align: center;
 }
 
 .adventure img {
-    width: 100%;
-    height: auto;
+  width: 100%;
 }
 
 .adventure figcaption {
-    text-align: center;
-    font-size: 0.9rem;
-}
-.contact-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
-.company-info {
-    text-align: center;
+  text-align: center;
 }
 
 
-.map iframe {
-    width: 100%;
-    height: 400px;
+/* Home */
+
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
-.contact-form form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    padding: 8px;
-    font-size: 1rem;
-}
-
-.contact-form button {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-}
-
-.employees {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.employees h2 {
-    width: 100%;
-    text-align: center;
-}
-
-.employees figure {
-    width: 200px;
-    text-align: center;
-}
-
-.employees img {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-}
-.contact-form button {
-    background-color: var(--primary-color);
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
+.home-grid img {
+  width: 100%;
 }
